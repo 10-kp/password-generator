@@ -20,7 +20,7 @@ body {
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 20px; 
 }
 
 header {
@@ -28,6 +28,19 @@ header {
   padding: 20px;
   padding-top: 0px;
   color: hsl(206, 17%, 28%);
+}
+
+label{
+    font-weight: bold;
+}
+
+.number-range-container {
+    display: flex;
+    align-items: center;
+}
+
+.input-number {
+width: 3rem;
 }
 
 .card {
@@ -50,12 +63,19 @@ header {
   height: 2px;
 }
 
-.card-body {
+.form {
   min-height: 100px;
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 1rem;
+  column-count: 3rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-footer {
   text-align: center;
+  word-break: break-all;
 }
 
 .card-footer::before {
