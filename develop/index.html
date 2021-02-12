@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,60 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
-  
-<body>
-    <div class="wrapper">
+
+  <body>
+    <wrapper class="wrapper">
       <header>
         <h1>Password Generator</h1>
       </header>
-<!-- input the password -->
+      
       <div class="card">
         <card-header class="card-header">
           <h2>Generate a Password</h2>
         </card-header>
-<!-- input all elements -->
-        <div class="card-body">
-            <form class = "form">
-                
-                <label for="numberOfCharacters"> Number of Characters</label>
-                <!-- <div class="number-character-amount-container"> -->
-                <!-- Min and Max values -->
-                <!-- id to select them form .js -->
-                <!-- value =default value -->
-                <div class = "number-range-container">
-                <input type = "range" min = "8" max = "128" value ="1" id="characterAmountRange">
-                <input class="input-number" type = "number" min ="1" max = "100" value ="8" id="characterAmountNumber">
-                </div>
-                
-                <!-- Check bo x for lowercase -->
-                <label for="boxLowerCase">lowercase</label>
-                <input type="checkbox" id ="boxLowerCase">
-                
-                <!-- Check box for UPPERcase -->
-                <label for="boxUpperCase">UPPERCASE</label>
-                <input type="checkbox" id ="boxUpperCase">
-                
-                <!-- Check box for numbers -->
-                <label for="boxNumbers">Numbers</label>
-                <input type="checkbox" id ="boxNumbers">
 
-                <!-- Check box for special characters -->
-                <label for="boxSpecialCharacters">Special Characters</label>
-                <input type="checkbox" id ="boxSpecialCharacters">
-
-                 <!-- Check how to use the other button in footer-->
-                <!-- <button type = "submit">Generate Password</button> -->
-            </form>
-          
-        <!-- <textarea
+        <card-body class="card-body">
+          <textarea
             readonly
             id="password"
             placeholder="Your Secure Password"
             aria-label="Generated Password"
-          ></textarea> -->
-        </div>
+          ></textarea>
+        </card-body>
 
         <footer class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
@@ -68,11 +35,10 @@
       
       </div>
 
-    </div>
+    </wrapper>
 
     <script src="script.js"></script>
   
-    
-</body>
+  </body>
 
 </html>
