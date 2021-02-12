@@ -73,13 +73,13 @@ function generatePassword() {
         console.log(passwordCharacters)
   
         // Fill empty string from selecting characters
-        var randomPassword = ""
+        var randomPass = ""
         
         for (var i = 0; i < charLength; i++) {
-          randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
-          console.log(randomPassword)
+          randomPass = randomPass + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+          console.log(randomPass)
         }
-        return randomPassword;
+        return randomPass;
   }
   
   // Write password to the #password input
