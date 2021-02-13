@@ -4,7 +4,7 @@ Link to the page: https://10-kp.github.io/password-generator/
 
 ======= Snapshot: 
 
-Snapshot: ![](password-generator-snapshot.png)
+Snapshot: ![Screeshot](https://github.com/10-kp/password-generator/blob/main/develop/images/password-generator-snapshot.png)
 
 Installation - Created a new repository in GitHib called password-generator - Copied the SSH Key in "Code" - [For MAC] In terminal, go to Desktop (cd Desktop/) - Create a clone -> git clone + paste the SSH key
 
