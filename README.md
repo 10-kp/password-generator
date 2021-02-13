@@ -17,7 +17,3 @@ Amended the JSS file
 - In terminal -> git add. -> git commit -m "(update with commets)" -> git push
 - Publishing the site online via GitHub -> Settings -> GitHub Pages -> Source -> Main. 
 
-Citation:
-W3 schools
-TiffanyCasey Password generator - https://github.com/TiffanyCasey/Password-Generator
-

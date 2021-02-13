@@ -13,73 +13,50 @@ var specialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~
 
 // Prompt for number of characters for the user
 function generatePassword() {
-    var charLength = (prompt("How many characters in your password?"));
-    //WHY CANT I CREATE A VARIBLE ABOVE AND DECLARE?
-    // return (charLength)
-  
-    // Create a loop for length of password
-    //ISSUE 1 - THE PASSWORD GOES ON DESPITE RESTRICTING.
-    //ISSUE 2 - PROMPTS THE SAME ALERT TWICE
-    //ISSUE 3 - CAN THIS IF STATEMENT BE LINKED TO THE EXAMP VARIABLE ABOVE?
-        if (charLength < 8 || charLength >= 128) {
-            alert("Please choose a length between 8-128 characters");
-        } else {
-            //HOW TO PUT FIGURES IN THE CHARACTER - LIKE IN Python, YOU COULD USE f-string
-            var charLength = (prompt("How many ${characters} in your password?"));
-        }    
-        
-  
-      // Password Parameters
-      //THIS NEEDS TO BE PART OF THE FUNCTION?
-      //ANY WAY WITHOUT CREATING A VARIABLE?
-      var lowerCaseChar = confirm("Click Ok to include lowercase letters");
-      var upperCaseChar = confirm("Click Ok to include uppercase letters");
-      var numbersChar = confirm("Click Ok to include numbers");    
-      var specialChar = confirm("Click Ok to include special characters");
-      
-//THIS IS STATEMENT IS NOT WORKING
-        if (lowerCaseChar === false && upperCaseChar  === false &&  numbersChar === false && specialChar === false) {
-          alert("You must choose at least one parameter");
-          var lowerCaseChar = confirm("Click Ok to include lowercase letters");
-          var upperCaseChar = confirm("Click Ok to include uppercase letters");   
-          var numbersChar = confirm("Click Ok to include numbers");
-          var specialChar = confirm("Click Ok to include special characters");
-        } else{
-        prompt("Something went wrong. Try again")
-    }
-  
-        // Combine all the characters
-        //IS THERE A BETTER WAY TO DO THIS
-        var passwordCharacters = []
-            if (lowerCaseChar) {
-            passwordCharacters = passwordCharacters.concat(lowerCase)
-        }
-      
-          if (upperCaseChar) {
-            passwordCharacters = passwordCharacters.concat(upperCase)
-        }  
-          if (numbersChar) {
-            passwordCharacters = passwordCharacters.concat(numbers)
-        }
-          if (specialChar) {
-            passwordCharacters = passwordCharacters.concat(specialChar)
-        //THIS DOES NOT SEEM TO WORK
-        } else{
-            alert("Something went wrong. Try again")
-        }
-
+    var charLength = (prompt("Please choose a length between 8-128 characters?"));
     
-        console.log(passwordCharacters)
+        if (JSON.parse (charLength) > 8 && JSON.parse(charLength) <= 128) {
+            var lowerCaseChar = confirm("Click Ok to include lowercase letters");
+            var upperCaseChar = confirm("Click Ok to include uppercase letters");
+            var numbersChar = confirm("Click Ok to include numbers");    
+            var specialChar = confirm("Click Ok to include special characters");
+        if (lowerCaseChar === false && upperCaseChar  === false &&  numbersChar === false && specialChar === false) {
+                alert("You must choose at least one parameter");
+                return generatePassword();
+            } 
   
-        // Fill empty string from selecting characters
-        var randomPass = ""
-        
-        for (var i = 0; i < charLength; i++) {
-          randomPass = randomPass + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
-          console.log(randomPass)
+            var passwordCharacters = []
+                if (lowerCaseChar) {
+                passwordCharacters = passwordCharacters.concat(lowerCase)
+            }
+          
+              if (upperCaseChar) {
+                passwordCharacters = passwordCharacters.concat(upperCase)
+            }  
+              if (numbersChar) {
+                passwordCharacters = passwordCharacters.concat(numbers)
+            }
+              if (specialChar) {
+                passwordCharacters = passwordCharacters.concat(specialChar)
+            } 
+    
+            console.log(passwordCharacters)
+      
+            var randomPass = ""
+            
+            for (var i = 0; i < charLength; i++) {
+              randomPass = randomPass + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+              console.log(randomPass)
+            }
+            console.log(randomPass);
+            return randomPass;
+
+        } else {
+            alert("You must choose a number between 8 and 128.");
+                return generatePassword();
         }
-        return randomPass;
-  }
+    }
+ 
   
   // Write password to the #password input
   function writePassword() {
@@ -89,12 +66,7 @@ function generatePassword() {
     passwordText.value = password;
   }
 
-
-
-//HOW IS THIS LINKED TO THE CODE?
 var generateBtn = document.querySelector("#generate");
-// Write password to the #password input
 
-// Add event listener to generate button???????????
 generateBtn.addEventListener("click", writePassword);
 
