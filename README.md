@@ -1,6 +1,8 @@
 # password-generator
 Link to the page: https://10-kp.github.io/password-generator/
 
+Github: https://github.com/10-kp/password-generator
+
 
 ======= Snapshot: 
 
