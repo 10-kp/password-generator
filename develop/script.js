@@ -10,30 +10,28 @@ var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
 
 
-// Declare Variables 
-var charLength = "";
-var lowerCaseChar;
-var upperCaseChar;
-var numbersChar;
-var specialChar;
-
 
 // Prompt for number of characters for the user
-//HOW TO PUT FIGURES IN THE CHARACTER - LIKE IN Python, YOU COULD USE f-statement
 function generatePassword() {
     var charLength = (prompt("How many characters in your password?"));
+    //WHY CANT I CREATE A VARIBLE ABOVE AND DECLARE?
+    // return (charLength)
   
     // Create a loop for length of password
     //ISSUE 1 - THE PASSWORD GOES ON DESPITE RESTRICTING.
     //ISSUE 2 - PROMPTS THE SAME ALERT TWICE
+    //ISSUE 3 - CAN THIS IF STATEMENT BE LINKED TO THE EXAMP VARIABLE ABOVE?
         if (charLength < 8 || charLength >= 128) {
             alert("Please choose a length between 8-128 characters");
         } else {
-            var charLength = (prompt("How many characters in your password?"));
+            //HOW TO PUT FIGURES IN THE CHARACTER - LIKE IN Python, YOU COULD USE f-string
+            var charLength = (prompt("How many ${characters} in your password?"));
         }    
         
   
       // Password Parameters
+      //THIS NEEDS TO BE PART OF THE FUNCTION?
+      //ANY WAY WITHOUT CREATING A VARIABLE?
       var lowerCaseChar = confirm("Click Ok to include lowercase letters");
       var upperCaseChar = confirm("Click Ok to include uppercase letters");
       var numbersChar = confirm("Click Ok to include numbers");    
@@ -51,6 +49,7 @@ function generatePassword() {
     }
   
         // Combine all the characters
+        //IS THERE A BETTER WAY TO DO THIS
         var passwordCharacters = []
             if (lowerCaseChar) {
             passwordCharacters = passwordCharacters.concat(lowerCase)
